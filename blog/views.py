@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from blog.models import Blog
+from blog.models import Blog, Author
 
 def post_list(request):
     post = Blog.objects.all()
@@ -26,5 +26,18 @@ def page_post(request, post_id):
         'blog/page_post.html',
         context=context,
     )
+
+def page_author(request):
+    author_post = Blog.objects.filter()
+    context = {
+        'author': author_post,
+
+    }
+    return render(
+        request,
+        'blog/post.list.html',
+        context=context,
+    )
+
 
 
