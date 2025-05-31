@@ -12,7 +12,7 @@
         {% for post in posts_list %}
 
             <li>
-                {{ post.title }} - {{ post.published_date }}
+                <a href="{% url 'page_post' post.id %}">{{ post.title }}</a> - {{ post.published_date }}
             </li>
 
         {% endfor %}
