@@ -18,8 +18,16 @@
         {% endfor %}
 
         <h2>Автори</h2>
+        {% for post in posts_list %}
 
-        {{author}}
+            <li>
+                {{ post.author }} - {{post.title}}
+
+            </li>
+
+        {% endfor %}
+
+
 
 
 

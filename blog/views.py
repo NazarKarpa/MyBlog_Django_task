@@ -27,15 +27,16 @@ def page_post(request, post_id):
         context=context,
     )
 
-def page_author(request):
-    author_post = Blog.objects.filter()
+def page_author(request, author_id):
+    author = Author.objects.get_or_404(id = author_id)
+    author_post = Blog.objects.filter(author=author).all()
     context = {
-        'author': author_post,
-
+        'posts_list': author_post,
     }
+
     return render(
         request,
-        'blog/post.list.html',
+        'blog/post_list.html',
         context=context,
     )
 
